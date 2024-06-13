@@ -1,0 +1,101 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.container {
+    width: 80%;
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+/* Header Styles */
+.topheader {
+    background-color: #ff0000;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.topheader h1 {
+    margin: 0;
+}
+
+.topheader p {
+    margin-top: 10px;
+    font-size: 1.1em;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #333;
+    color: #fff;
+}
+
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.navbar ul li {
+    float: left;
+}
+
+.navbar ul li a {
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+.navbar ul li a:hover {
+    background-color: #ff0000;
+    color: #fff;
+}
+
+/* Main Content Styles */
+.main-content {
+    padding: 20px 0;
+    background-color: #f4f4f4;
+}
+
+.content-left, .content-right {
+    padding: 20px;
+    background: #fff;
+    margin-bottom: 20px;
+}
+
+.content-left {
+    float: left;
+    width: 48%;
+    margin-right: 2%;
+}
+
+.content-right {
+    float: left;
+    width: 48%;
+}
+
+/* Clearfix for floated columns */
+.main-content:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
