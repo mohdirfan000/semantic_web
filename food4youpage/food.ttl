@@ -1,0 +1,94 @@
+@prefix ex: <http://example.org/> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Define Classes
+ex:OnlineFoodOrderingPlatform rdf:type rdfs:Class .
+ex:MenuItem rdf:type rdfs:Class .
+ex:Order rdf:type rdfs:Class .
+ex:Reservation rdf:type rdfs:Class .
+
+# Define Properties
+ex:hasMenuItem rdf:type rdf:Property ;
+               rdfs:domain ex:OnlineFoodOrderingPlatform ;
+               rdfs:range ex:MenuItem .
+
+ex:hasOrder rdf:type rdf:Property ;
+            rdfs:domain ex:OnlineFoodOrderingPlatform ;
+            rdfs:range ex:Order .
+
+ex:hasReservation rdf:type rdf:Property ;
+                  rdfs:domain ex:OnlineFoodOrderingPlatform ;
+                  rdfs:range ex:Reservation .
+
+ex:menuItemName rdf:type rdf:Property ;
+                rdfs:domain ex:MenuItem ;
+                rdfs:range xsd:string .
+
+ex:menuItemDescription rdf:type rdf:Property ;
+                       rdfs:domain ex:MenuItem ;
+                       rdfs:range xsd:string .
+
+ex:menuItemPrice rdf:type rdf:Property ;
+                 rdfs:domain ex:MenuItem ;
+                 rdfs:range xsd:float .
+
+ex:orderDate rdf:type rdf:Property ;
+             rdfs:domain ex:Order ;
+             rdfs:range xsd:date .
+
+ex:reservationDate rdf:type rdf:Property ;
+                   rdfs:domain ex:Reservation ;
+                   rdfs:range xsd:date .
+
+ex:reservationTime rdf:type rdf:Property ;
+                   rdfs:domain ex:Reservation ;
+                   rdfs:range xsd:time .
+
+ex:reservationPeople rdf:type rdf:Property ;
+                     rdfs:domain ex:Reservation ;
+                     rdfs:range xsd:int .
+
+ex:reservationName rdf:type rdf:Property ;
+                   rdfs:domain ex:Reservation ;
+                   rdfs:range xsd:string .
+
+ex:reservationEmail rdf:type rdf:Property ;
+                    rdfs:domain ex:Reservation ;
+                    rdfs:range xsd:string .
+
+# Instances
+ex:Food4You rdf:type ex:OnlineFoodOrderingPlatform ;
+            ex:hasMenuItem ex:MenuItem1, ex:MenuItem2, ex:MenuItem3 ;
+            ex:hasOrder ex:Order1, ex:Order2 ;
+            ex:hasReservation ex:Reservation1 .
+
+ex:MenuItem1 rdf:type ex:MenuItem ;
+             ex:menuItemName "Pasta" ;
+             ex:menuItemDescription "Delicious pasta with creamy sauce" ;
+             ex:menuItemPrice "12.99"^^xsd:float .
+
+ex:MenuItem2 rdf:type ex:MenuItem ;
+             ex:menuItemName "Bruschetta" ;
+             ex:menuItemDescription "Toasted bread topped with fresh tomatoes and basil" ;
+             ex:menuItemPrice "8.99"^^xsd:float .
+
+ex:MenuItem3 rdf:type ex:MenuItem ;
+             ex:menuItemName "Pesto Pasta" ;
+             ex:menuItemDescription "Pasta with homemade pesto sauce" ;
+             ex:menuItemPrice "11.99"^^xsd:float .
+
+ex:Order1 rdf:type ex:Order ;
+          ex:orderDate "2024-06-24"^^xsd:date .
+
+ex:Order2 rdf:type ex:Order ;
+          ex:orderDate "2024-06-25"^^xsd:date .
+
+ex:Reservation1 rdf:type ex:Reservation ;
+                ex:reservationName "John Doe" ;
+                ex:reservationEmail "john.doe@example.com" ;
+                ex:reservationDate "2024-06-26"^^xsd:date ;
+                ex:reservationTime "19:00:00"^^xsd:time ;
+                ex:reservationPeople "2"^^xsd:int .
